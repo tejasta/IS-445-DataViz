@@ -3,20 +3,12 @@
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-        <style>
-            #grad1 {
-              height: 200px;
-              background-color: red; /* For browsers that do not support gradients */
-              background-image: linear-gradient(to bottom right, red, yellow);
-            }
-            </style>
         <title>IS 445 Assignment 3 Data Visualization</title>
     </head>
     <body style = "background-color : #e38748;">
         <p style = "text-align:center ; font-size : 75px ; font-family : 'EB Garamond', serif; ">
             <strong>IS 445 Assignment 3 Data Visualization</strong>
         </p>
-
         <div id="myviz">
         </div>
     </body>
@@ -24,7 +16,7 @@
     <script>
         mySpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A scatterplot showing Year Acquired vs Year Constructed",
+    "description": "A scatterplot showing Year Acquired vs Year Constructed and Bar plot of Year Acquired vs Bldg Status",
     "width": 500,
     "height": 500,
     "padding": 20,
@@ -50,7 +42,7 @@
             "padding":20,
             "encoding":{
                 "x":{"field": "Year Acquired", "type": "quantitative"},
-                "y":{"field": "Year Constructed", "type": "quantitative"}
+                "y":{"field": "Bldg Status", "type": "nominal"}
             }
         }]
     }
@@ -59,4 +51,3 @@
     vegaEmbed('#myviz', mySpec);
     </script>
 </html>
-
